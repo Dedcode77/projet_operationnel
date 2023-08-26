@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 22, 2021 at 09:25 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Hôte : 127.0.0.1
+-- Généré le : sam. 26 août 2023 à 16:18
+-- Version du serveur : 10.4.27-MariaDB
+-- Version de PHP : 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `schoolfeesys`
+-- Base de données : `schoolfeesys`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fees_transaction`
+-- Structure de la table `fees_transaction`
 --
 
 CREATE TABLE `fees_transaction` (
@@ -32,10 +33,10 @@ CREATE TABLE `fees_transaction` (
   `paid` int(255) NOT NULL,
   `submitdate` datetime NOT NULL,
   `transcation_remark` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `fees_transaction`
+-- Déchargement des données de la table `fees_transaction`
 --
 
 INSERT INTO `fees_transaction` (`id`, `stdid`, `paid`, `submitdate`, `transcation_remark`) VALUES
@@ -62,7 +63,7 @@ INSERT INTO `fees_transaction` (`id`, `stdid`, `paid`, `submitdate`, `transcatio
 -- --------------------------------------------------------
 
 --
--- Table structure for table `grade`
+-- Structure de la table `grade`
 --
 
 CREATE TABLE `grade` (
@@ -70,10 +71,10 @@ CREATE TABLE `grade` (
   `grade` varchar(255) NOT NULL,
   `detail` text NOT NULL,
   `delete_status` enum('0','1') NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `grade`
+-- Déchargement des données de la table `grade`
 --
 
 INSERT INTO `grade` (`id`, `grade`, `detail`, `delete_status`) VALUES
@@ -93,7 +94,7 @@ INSERT INTO `grade` (`id`, `grade`, `detail`, `delete_status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `student`
+-- Structure de la table `student`
 --
 
 CREATE TABLE `student` (
@@ -107,14 +108,14 @@ CREATE TABLE `student` (
   `grade` varchar(255) NOT NULL,
   `balance` int(255) NOT NULL,
   `delete_status` enum('0','1') NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `student`
+-- Déchargement des données de la table `student`
 --
 
 INSERT INTO `student` (`id`, `emailid`, `sname`, `joindate`, `about`, `contact`, `fees`, `grade`, `balance`, `delete_status`) VALUES
-(5, 'christinemoore@gmail.com', 'Christine Moore', '2020-02-14 00:00:00', 'Demo About Text', '7566969650', 3660, '11', 2160, '0'),
+(5, 'christinemoore@gmail.com', 'Christine Moore', '2020-02-14 00:00:00', 'Demo About Text', '7566969656', 3660, '11', 2160, '0'),
 (10, 'leomaxwell@gmail.com', 'Leo Maxwell', '2021-01-14 00:00:00', 'new enrollment', '7563690002', 5120, '8', 2620, '0'),
 (11, 'arandrew@gmail.com', 'Andrew Arnette', '2021-03-26 00:00:00', 'new enrollment', '3520120006', 5200, '12', 3100, '0'),
 (12, 'jonathan@gmail.com', 'Jonathan Odell', '2019-10-11 00:00:00', 'old enrollment', '4230001205', 6900, '8', 3900, '0'),
@@ -133,7 +134,7 @@ INSERT INTO `student` (`id`, `emailid`, `sname`, `joindate`, `about`, `contact`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Structure de la table `user`
 --
 
 CREATE TABLE `user` (
@@ -143,67 +144,79 @@ CREATE TABLE `user` (
   `name` varchar(255) NOT NULL,
   `emailid` varchar(255) NOT NULL,
   `lastlogin` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `user`
+-- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `name`, `emailid`, `lastlogin`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'admin@gmail.com', '0000-00-00 00:00:00');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'admin@gmail.com', '0000-00-00 00:00:00'),
+(3, 'ali', '984d8144fa08bfc637d2825463e184fa', '', 'ali@gmail.com', '0000-00-00 00:00:00'),
+(4, 'maouloud', 'de82342650aeed3ae4d88af7317cfc5f', '', 'maouloud@gmail.com', '0000-00-00 00:00:00'),
+(5, 'maouloude', 'e7247759c1633c0f9f1485f3690294a9', '', 'maouloude@gmail.com', '0000-00-00 00:00:00'),
+(6, 'codou', '6b840bb07b9fd22cdaecd7d0a754c1ac', '', 'codou@gmail.com', '0000-00-00 00:00:00'),
+(7, 'modou', '4256268b8cc60916833c05ba048fc197', '', 'modou@gmail.com', '0000-00-00 00:00:00'),
+(8, 'modouHJ', '4256268b8cc60916833c05ba048fc197', '', 'modHGou@gmail.com', '0000-00-00 00:00:00'),
+(9, 'TST', '327595b632afdfe89b4b593f4bd7c80a', '', 'TST@gmail.com', '0000-00-00 00:00:00');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `fees_transaction`
+-- Index pour la table `fees_transaction`
 --
 ALTER TABLE `fees_transaction`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `grade`
+-- Index pour la table `grade`
 --
 ALTER TABLE `grade`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `student`
+-- Index pour la table `student`
 --
 ALTER TABLE `student`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Index pour la table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `fees_transaction`
+-- AUTO_INCREMENT pour la table `fees_transaction`
 --
 ALTER TABLE `fees_transaction`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
 --
--- AUTO_INCREMENT for table `grade`
+-- AUTO_INCREMENT pour la table `grade`
 --
 ALTER TABLE `grade`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
--- AUTO_INCREMENT for table `student`
+-- AUTO_INCREMENT pour la table `student`
 --
 ALTER TABLE `student`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

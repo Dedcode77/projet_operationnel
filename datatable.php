@@ -175,7 +175,7 @@ $aColumns = array( 's.id','s.sname','s.balance','s.fees','b.grade','s.contact','
                     $aRow['grade'],
 					date("d M y", strtotime($aRow['joindate'])),
                     
-					html_entity_decode('<button class="btn btn-success btn-sm" style="border-radius:0%" onclick="javascript:GetFeeForm('.$aRow['id'].')"><i class="fa fa-money"></i> Collect Fee </button>')
+					html_entity_decode('<button class="btn btn-success btn-sm" style="border-radius:0%" onclick="javascript:GetFeeForm('.$aRow['id'].')"><i class="fa fa-money"></i> Collecter les frais </button>')
 										
                 );
 		
@@ -361,7 +361,7 @@ $aColumns = array( 's.id','s.sname','s.balance','s.fees','b.grade','s.contact','
                     $aRow['grade'],
 					date("d M y", strtotime($aRow['joindate'])),
                     
-					html_entity_decode('<button class="btn btn-success btn-sm" style="border-radius:0%" onclick="javascript:GetFeeForm('.$aRow['id'].')"> Check Report </button>')
+					html_entity_decode('<button class="btn btn-success btn-sm" style="border-radius:0%" onclick="javascript:GetFeeForm('.$aRow['id'].')"> Vérifier le rapport </button>')
 										
                 );
 		

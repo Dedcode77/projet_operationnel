@@ -14,7 +14,7 @@ if($q->num_rows>0)
 $res = $q->fetch_assoc();
 echo '  <form class="form-horizontal" id ="signupForm1" action="fees.php" method="post">
   <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Name:</label>
+    <label class="control-label col-sm-2" for="email">Nom:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" disabled  value="'.$res['sname'].'" >
     </div>
@@ -29,7 +29,7 @@ echo '  <form class="form-horizontal" id ="signupForm1" action="fees.php" method
   
   
   <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Total Fee:</label>
+    <label class="control-label col-sm-2" for="email">Frais Total:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="totalfee" id="totalfee"   value="'.$res['fees'].'" disabled />
     </div>
@@ -37,7 +37,7 @@ echo '  <form class="form-horizontal" id ="signupForm1" action="fees.php" method
   
   
   <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Balance:</label>
+    <label class="control-label col-sm-2" for="email">Solde:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="balance"  id="balance" value="'.$res['balance'].'" disabled />
 	  <input type="hidden" value="'.$res['id'].'" name="sid">
@@ -46,7 +46,7 @@ echo '  <form class="form-horizontal" id ="signupForm1" action="fees.php" method
   
   
   <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Paid:</label>
+    <label class="control-label col-sm-2" for="email">Payer:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="paid"  id="paid"  />
     </div>
@@ -62,7 +62,7 @@ echo '  <form class="form-horizontal" id ="signupForm1" action="fees.php" method
   
   
    <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Remark:</label>
+    <label class="control-label col-sm-2" for="email">Remarque:</label>
     <div class="col-sm-10">
       <textarea class="form-control" name="transcation_remark" id="transcation_remark"></textarea>
     </div>
@@ -74,7 +74,7 @@ echo '  <form class="form-horizontal" id ="signupForm1" action="fees.php" method
  
   <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-info" style="border-radius:0%" name="save">Submit</button>
+      <button type="submit" class="btn btn-info" style="border-radius:0%" name="save">Soumettre</button>
     </div>
   </div>
 </form>

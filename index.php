@@ -10,7 +10,7 @@ include("php/checklogin.php");
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Fees Management System</title>
+    <title>Système de gestion des frais de scolarité</title>
 
     <!-- BOOTSTRAP STYLES-->
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -32,7 +32,7 @@ include("php/header.php");
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Dashboard</h1>
+                        <h1 class="page-head-line">Tableau de bord</h1>
                         
 
                     </div>
@@ -44,8 +44,8 @@ include("php/header.php");
                         <div class="main-box mb-purple">
                             <a href="student.php">
                                 <i class="fa fa-users fa-5x"></i>
-                                <h4>Total Students: <?php include 'counter/stucount.php'?></h4>
-                                <h5>Manage Students</h5>
+                                <h4>Nombre total d'étudiants: <?php include 'counter/stucount.php'?></h4>
+                                <h5>Gérer les étudiants</h5>
                             </a>
                         </div>
                     </div>
@@ -57,8 +57,8 @@ include("php/header.php");
                         <div class="main-box mb-green">
                             <a href="fees.php">
                                 <i class="fa fa-money fa-5x"></i>
-                                <h4>Total Earnings: <?php include 'counter/totalearncount.php'?></h4>
-                                <h5>Collect Fees</h5>
+                                <h4>Total des gains: <?php include 'counter/totalearncount.php'?></h4>
+                                <h5>Percevoir les frais</h5>
                             </a>
                         </div>
                     </div>
@@ -68,8 +68,8 @@ include("php/header.php");
                         <div class="main-box mb-secondary">
                             <a href="report.php">
                                 <i class="fa fa-th-large fa-5x"></i>
-                                <h4>Available Grades: <?php include 'counter/totalgrade.php'?></h4>
-                                <h5>School Grade Levels</h5>
+                                <h4>Filière disponible: <?php include 'counter/totalgrade.php'?></h4>
+                                <h5>Filières</h5>
                             </a>
                         </div>
                     </div>
@@ -82,7 +82,7 @@ include("php/header.php");
                         <div class="main-box mb-dull">
                             <a>
                                 <i class="fa fa-toggle-on fa-5x"></i>
-                                <h5>Active Students: <?php include 'counter/activecount.php'?></h5>
+                                <h5>Étudiants actifs: <?php include 'counter/activecount.php'?></h5>
                             </a>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ include("php/header.php");
                         <div class="main-box mb-maroon">
                             <a href="report.php">
                                 <i class="fa fa-file-pdf-o fa-5x"></i>
-                                <h5>View Reports</h5>
+                                <h5>Afficher les rapports</h5>
                             </a>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ include("php/header.php");
                         <div class="main-box mb-yell">
                             <a href="inactivestd.php">
                                 <i class="fa fa-toggle-off fa-5x"></i>
-                                <h5>In-Active Students: <?php include 'counter/inactivecount.php'?></h5>
+                                <h5>Étudiants inactifs: <?php include 'counter/inactivecount.php'?></h5>
                             </a>
                         </div>
                     </div>

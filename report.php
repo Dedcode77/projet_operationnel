@@ -9,7 +9,7 @@ include("php/checklogin.php");
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Fees Management System</title>
+    <title>Système de gestion des frais de scolarité</title>
 
     <!-- BOOTSTRAP STYLES-->
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -43,7 +43,7 @@ include("php/header.php");
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">View Reports
+                        <h1 class="page-head-line">Afficher les rapports
 						
 						</h1>
 
@@ -58,22 +58,22 @@ include("php/header.php");
 <div class="row" style="margin-bottom:20px;">
 <div class="col-md-12">
 <fieldset class="scheduler-border" >
-    <legend  class="scheduler-border">Search:</legend>
+    <legend  class="scheduler-border">Recherche:</legend>
 <form class="form-inline" role="form" id="searchform">
   <div class="form-group">
-    <label for="email">Name</label>
+    <label for="email">Nom</label>
     <input type="text" class="form-control" id="student" name="student">
   </div>
   
    <div class="form-group">
-    <label for="email"> Date Of Joining </label>
+    <label for="email"> Date adhésion </label>
     <input type="text" class="form-control" id="doj" name="doj" >
   </div>
   
   <div class="form-group">
-    <label for="email"> Grade </label>
+    <label for="email"> Filière </label>
     <select  class="form-control" id="grade" name="grade" >
-		<option value="" >Select Grade</option>
+		<option value="" >Sélectionner la filière</option>
                                     <?php
 									$sql = "select * from grade where delete_status='0' order by grade.grade asc";
 									$q = $conn->query($sql);
@@ -86,8 +86,8 @@ include("php/header.php");
 	</select>
   </div>
   
-   <button type="button" class="btn btn-success btn-sm" style="border-radius:0%" id="find" > Filter </button>
-  <button type="reset" class="btn btn-danger btn-sm" style="border-radius:0%" id="clear" > Reset </button>
+   <button type="button" class="btn btn-success btn-sm" style="border-radius:0%" id="find" > Filtre </button>
+  <button type="reset" class="btn btn-danger btn-sm" style="border-radius:0%" id="clear" > Réinitialiser </button>
 </form>
 </fieldset>
 
@@ -265,7 +265,7 @@ display:none;
 		
 		<div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Fees  
+                        Gérer les frais
                         </div>
                         <div class="panel-body">
                             <div class="table-sorting table-responsive" id="subjectresult">
@@ -273,11 +273,11 @@ display:none;
                                     <thead>
                                         <tr>
                                           
-                                            <th>Name/Contact</th>                                            
-                                            <th>Fees</th>
-                                          <th>Balance</th>
-                                          <th>Grade</th>
-                                          <th>DOJ</th>
+                                            <th>Nom/Contact</th>                                            
+                                            <th>Frais</th>
+                                          <th>Solde</th>
+                                          <th>Filière</th>
+                                          <th>Date adhésion</th>
                                           <th>Action</th>
                                         </tr>
                                     </thead>
@@ -298,13 +298,13 @@ display:none;
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Fee Report</h4>
+          <h4 class="modal-title">Rapport sur les frais</h4>
         </div>
         <div class="modal-body" id="formcontent">
         
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" style="border-radius:0%" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" style="border-radius:0%" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>

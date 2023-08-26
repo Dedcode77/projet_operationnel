@@ -86,14 +86,14 @@ $_GET['action']="";
 
 if(isset($_REQUEST['act']) && @$_REQUEST['act']=="1")
 {
-$errormsg = "<div class='alert alert-success'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Student record has been added!</div>";
+$errormsg = "<div class='alert alert-success'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Le dossier étudiant a été ajouté!</div>";
 }else if(isset($_REQUEST['act']) && @$_REQUEST['act']=="2")
 {
-$errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Student record has been updated!</div>";
+$errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Le dossier étudiant a été mis à jour!</div>";
 }
 else if(isset($_REQUEST['act']) && @$_REQUEST['act']=="3")
 {
-$errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Student has been deleted!</div>";
+$errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>L'élève a été supprimé!</div>";
 }
 
 ?>
@@ -103,7 +103,7 @@ $errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dis
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Fees Management System</title>
+    <title>Système de gestion des frais de scolarité</title>
 
     <!-- BOOTSTRAP STYLES-->
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -132,10 +132,10 @@ include("php/header.php");
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Manage Students  
+                        <h1 class="page-head-line">Gérer les étudiants
 						<?php
 						echo (isset($_GET['action']) && @$_GET['action']=="add" || @$_GET['action']=="edit")?
-						' <a href="student.php" class="btn btn-success btn-sm pull-right" style="border-radius:0%">Go Back </a>':'<a href="student.php?action=add" class="btn btn-danger btn-sm pull-right" style="border-radius:0%"><i class="glyphicon glyphicon-plus"></i> Add New Student</a>';
+						' <a href="student.php" class="btn btn-success btn-sm pull-right" style="border-radius:0%">Retourner</a>':'<a href="student.php?action=add" class="btn btn-danger btn-sm pull-right" style="border-radius:0%"><i class="glyphicon glyphicon-plus"></i> Ajouter un nouvel étudiant</a>';
 						?>
 						</h1>
                      
@@ -159,14 +159,14 @@ echo $errormsg;
                     <div class="col-sm-10 col-sm-offset-1">
                <div class="panel panel-success">
                         <div class="panel-heading">
-                           <?php echo ($action=="add")? "Add Student Details": "Edit Student Details"; ?>
+                           <?php echo ($action=="add")? "Add Student Details": "Modifier les détails de l'étudiant"; ?>
                         </div>
 						<form action="student.php" method="post" id="signupForm1" class="form-horizontal">
                         <div class="panel-body">
 						<fieldset class="scheduler-border" >
-						 <legend  class="scheduler-border">Personal Information:</legend>
+						 <legend  class="scheduler-border">Informations personnelles:</legend>
 						<div class="form-group">
-								<label class="col-sm-2 control-label" for="Old">Full Name* </label>
+								<label class="col-sm-2 control-label" for="Old">Nom complet* </label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" id="sname" name="sname" value="<?php echo $sname;?>"  />
 								</div>
@@ -179,10 +179,10 @@ echo $errormsg;
 							</div>
 							
 						<div class="form-group">
-								<label class="col-sm-2 control-label" for="Old">Grade* </label>
+								<label class="col-sm-2 control-label" for="Old">Filière* </label>
 								<div class="col-sm-10">
 									<select  class="form-control" id="grade" name="grade" >
-									<option value="" >Select Grade Level</option>
+									<option value="" >Sélectionner la filière</option>
                                     <?php
 									$sql = "select * from grade where delete_status='0' order by grade.grade asc";
 									$q = $conn->query($sql);
@@ -199,18 +199,18 @@ echo $errormsg;
 						
 						
 						<div class="form-group">
-								<label class="col-sm-2 control-label" for="Old">DOJ* </label>
+								<label class="col-sm-2 control-label" for="Old">date d'adhésion* </label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" placeholder="Date of Joining" id="joindate" name="joindate" value="<?php echo  ($joindate!='')?date("Y-m-d", strtotime($joindate)):'';?>" style="background-color: #fff;" readonly />
+									<input type="text" class="form-control" placeholder="date d'adhésion" id="joindate" name="joindate" value="<?php echo  ($joindate!='')?date("Y-m-d", strtotime($joindate)):'';?>" style="background-color: #fff;" readonly />
 								</div>
 							</div>
 						 </fieldset>
 						
 						
 							<fieldset class="scheduler-border" >
-						 <legend  class="scheduler-border">Fee Information:</legend>
+						 <legend  class="scheduler-border">Informations sur les frais:</legend>
 						<div class="form-group">
-								<label class="col-sm-2 control-label" for="Old">Total Fees* </label>
+								<label class="col-sm-2 control-label" for="Old">Total des droits* </label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" id="fees" name="fees" value="<?php echo $fees;?>" <?php echo ($action=="update")?"disabled":""; ?>  />
 								</div>
@@ -221,7 +221,7 @@ echo $errormsg;
 						{
 						?>
 						<div class="form-group">
-								<label class="col-sm-2 control-label" for="Old">Advance Fee* </label>
+								<label class="col-sm-2 control-label" for="Old">Avance de frais* </label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" id="advancefees" name="advancefees" readonly   />
 								</div>
@@ -231,7 +231,7 @@ echo $errormsg;
 						?>
 						
 						<div class="form-group">
-								<label class="col-sm-2 control-label" for="Old">Balance </label>
+								<label class="col-sm-2 control-label" for="Old">Solde </label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control"  id="balance" name="balance" value="<?php echo $balance;?>" disabled />
 								</div>
@@ -245,7 +245,7 @@ echo $errormsg;
 						{
 						?>
 							<div class="form-group">
-								<label class="col-sm-2 control-label" for="Password">Fee Remark </label>
+								<label class="col-sm-2 control-label" for="Password">Remarque sur les frais </label>
 								<div class="col-sm-10">
 	                        <textarea class="form-control" id="remark" name="remark"><?php echo $remark;?></textarea >
 								</div>
@@ -257,9 +257,9 @@ echo $errormsg;
 							</fieldset>
 							
 							 <fieldset class="scheduler-border" >
-						 <legend  class="scheduler-border">Optional Information:</legend>
+						 <legend  class="scheduler-border">Informations optionnelles:</legend>
 							<div class="form-group">
-								<label class="col-sm-2 control-label" for="Password">About Student </label>
+								<label class="col-sm-2 control-label" for="Password">À propos de l'étudiant </label>
 								<div class="col-sm-10">
 	                        <textarea class="form-control" id="about" name="about"><?php echo $about;?></textarea >
 								</div>
@@ -279,7 +279,7 @@ echo $errormsg;
 								<input type="hidden" name="id" value="<?php echo $id;?>">
 								<input type="hidden" name="action" value="<?php echo $action;?>">
 								
-									<button type="submit" name="save" class="btn btn-success" style="border-radius:0%">Save </button>
+									<button type="submit" name="save" class="btn btn-success" style="border-radius:0%">Sauvegarder </button>
 								 
 								   
 								   
@@ -471,7 +471,7 @@ yearRange: "1970:<?php echo date('Y');?>"
 		 
 		<div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Student  
+						Gérer les étudiants 
                         </div>
                         <div class="panel-body">
                             <div class="table-sorting table-responsive">
@@ -479,11 +479,11 @@ yearRange: "1970:<?php echo date('Y');?>"
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name | Contact</th>
-											<th>Grade</th>
-                                            <th>Joined On</th>
-                                            <th>Fees</th>
-											<th>Balance</th>
+                                            <th>Nom | Contact</th>
+											<th>Filière</th>
+                                            <th>inscrit le</th>
+                                            <th>Frais</th>
+											<th>Solde</th>
 											<th>Actions</th>
                                         </tr>
                                     </thead>
@@ -508,7 +508,7 @@ yearRange: "1970:<?php echo date('Y');?>"
 
 											<a href="student.php?action=edit&id='.$r['id'].'" class="btn btn-success btn-xs" style="border-radius:60px;"><span class="glyphicon glyphicon-edit"></span></a>
 											
-											<a onclick="return confirm(\'Are you sure you want to deactivate this record\');" href="student.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-xs" style="border-radius:60px;"><span class="glyphicon glyphicon-remove"></span></a> </td>
+											<a onclick="return confirm(\'Êtes-vous sûr de vouloir désactiver cet enregistrement\');" href="student.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-xs" style="border-radius:60px;"><span class="glyphicon glyphicon-remove"></span></a> </td>
 											
                                         </tr>';
 										$i++;

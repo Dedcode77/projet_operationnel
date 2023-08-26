@@ -39,7 +39,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Fees Management System</title>
+    <title>Système de gestion des frais de scolarité</title>
 
     <!-- BOOTSTRAP STYLES-->
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -72,7 +72,7 @@ text-align:center;
                 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                           
                             <div class="panel-body" style="background-color: #E2E2E2; margin-top:70px; box-shadow: 5px 10px #888888;">
-							  <h3 class="myhead">School Fees Management System</h3>
+							  <h3 class="myhead">Système de gestion des frais de scolarité</h3>
                                 <form role="form" action="login.php" method="post">
                                     <hr />
 									<?php
@@ -85,17 +85,20 @@ text-align:center;
                                    
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-user"  ></i></span>
-                                            <input type="text" class="form-control" placeholder="Username " name="username" required />
+                                            <input type="text" class="form-control" placeholder="Nom d'utilisateur " name="username" required />
                                         </div>
                                         
 									<div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control"  placeholder="Password" name="password" required />
+                                            <input type="password" class="form-control"  placeholder="Mot de passe" name="password" required />
                                         </div>
 										
                                    
                                      
-                                     <button class="btn btn-success" style="border-radius:0%" type= "submit" name="login">Login</button>
+                                        <button class="btn btn-success" style="border-radius:0%" >
+                                    <a style="color:white;text-decoration: none;" href="register.php">Inscription</a>
+                                    </button>
+                                     <button class="btn btn-success" style="border-radius:0%" type= "submit" name="login">Se connecter</button>
                                    
                                     </form>
                             </div>

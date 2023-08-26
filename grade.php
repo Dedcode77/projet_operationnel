@@ -63,14 +63,14 @@ $_GET['action']="";
 
 if(isset($_REQUEST['act']) && @$_REQUEST['act']=="1")
 {
-$errormsg = "<div class='alert alert-success'> Grade has been added successfully</div>";
+$errormsg = "<div class='alert alert-success'> La filière a été ajoutée avec succès</div>";
 }else if(isset($_REQUEST['act']) && @$_REQUEST['act']=="2")
 {
-$errormsg = "<div class='alert alert-success'> Grade has been updated successfully</div>";
+$errormsg = "<div class='alert alert-success'> La filière a été mise à jour avec succès</div>";
 }
 else if(isset($_REQUEST['act']) && @$_REQUEST['act']=="3")
 {
-$errormsg = "<div class='alert alert-success'> Grade has been deleted successfully</div>";
+$errormsg = "<div class='alert alert-success'> La filière a été supprimée avec succès</div>";
 }
 
 ?>
@@ -80,7 +80,7 @@ $errormsg = "<div class='alert alert-success'> Grade has been deleted successful
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Fees Management System</title>
+    <title>Système de gestion des frais de scolarité</title>
 
     <!-- BOOTSTRAP STYLES-->
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -108,10 +108,10 @@ include("php/header.php");
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Grade Levels  
+                        <h1 class="page-head-line">Filière  
 						<?php
 						echo (isset($_GET['action']) && @$_GET['action']=="add" || @$_GET['action']=="edit")?
-						' <a href="grade.php" class="btn btn-success btn-sm pull-right" style="border-radius:0%">Go Back </a>':'<a href="grade.php?action=add" class="btn btn-danger btn-sm pull-right" style="border-radius:0%"><i class="glyphicon glyphicon-plus"></i> Add New Grade </a>';
+						' <a href="grade.php" class="btn btn-success btn-sm pull-right" style="border-radius:0%">Retourner </a>':'<a href="grade.php?action=add" class="btn btn-danger btn-sm pull-right" style="border-radius:0%"><i class="glyphicon glyphicon-plus"></i> Ajouter une nouvelle filière</a>';
 						?>
 						</h1>
                      
@@ -135,7 +135,7 @@ include("php/header.php");
                     <div class="col-sm-8 col-sm-offset-2">
                <div class="panel panel-success">
                         <div class="panel-heading">
-                           <?php echo ($action=="add")? "Add Grade": "Edit Grade"; ?>
+                           <?php echo ($action=="add")? "Ajouter filière": "Modifier filière"; ?>
                         </div>
 						<form action="grade.php" method="post" id="signupForm1" class="form-horizontal">
                         <div class="panel-body">
@@ -144,7 +144,7 @@ include("php/header.php");
 						
 						
 						<div class="form-group">
-								<label class="col-sm-2 control-label" for="Old">Grade </label>
+								<label class="col-sm-2 control-label" for="Old">Filière </label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" id="grade" name="grade" value="<?php echo $grade;?>"  />
 								</div>
@@ -155,7 +155,7 @@ include("php/header.php");
 							
 							
 							<div class="form-group">
-								<label class="col-sm-2 control-label" for="Confirm"> Detail</label>
+								<label class="col-sm-2 control-label" for="Confirm"> Détail</label>
 								<div class="col-sm-10">
 									    <textarea class="form-control" name="detail" id="detail"><?php echo $detail;?></textarea >
 								</div>
@@ -166,7 +166,7 @@ include("php/header.php");
 								<input type="hidden" name="id" value="<?php echo $id;?>">
 								<input type="hidden" name="action" value="<?php echo $action;?>">
 								
-									<button type="submit" name="save" class="btn btn-success" style="border-radius:0%">Save </button>
+									<button type="submit" name="save" class="btn btn-success" style="border-radius:0%">Enregistré </button>
 								</div>
 							</div>
                          
@@ -202,7 +202,7 @@ include("php/header.php");
 					
 				},
 				messages: {
-					grade: "Please enter class name",
+					grade: "Veuillez entrer le nom de la classe",
 					
 					
 				},
@@ -260,7 +260,7 @@ include("php/header.php");
 		 
 		<div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Grade Level
+						Gérer la filière
                         </div>
                         <div class="panel-body">
                              <div class="table-sorting table-responsive">
@@ -269,8 +269,8 @@ include("php/header.php");
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Grade</th>
-                                            <th>Detail</th>
+                                            <th>Filière</th>
+                                            <th>Détail</th>
 											<th>Action</th>
                                         </tr>
                                     </thead>
@@ -288,7 +288,7 @@ include("php/header.php");
 											<td>
 											<a href="grade.php?action=edit&id='.$r['id'].'" class="btn btn-success btn-xs" style="border-radius:60px;"><span class="glyphicon glyphicon-edit"></span></a>
 											
-											<a onclick="return confirm(\'Are you sure you want to delete this record\');" href="grade.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-xs" style="border-radius:60px;"><span class="glyphicon glyphicon-remove"></span></a> </td>
+											<a onclick="return confirm(\'Êtes-vous sûr de vouloir supprimer cet enregistrement\');" href="grade.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-xs" style="border-radius:60px;"><span class="glyphicon glyphicon-remove"></span></a> </td>
                                         </tr>';
 										$i++;
 									}

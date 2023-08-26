@@ -32,7 +32,7 @@ $error = '<div class="alert alert-danger">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Fees Management System</title>
+    <title>Système de gestion des frais de scolarité</title>
 
     <!-- BOOTSTRAP STYLES-->
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -57,14 +57,14 @@ include("php/header.php");
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Account Setting</h1>
+                        <h1 class="page-head-line">Paramètre du compte</h1>
                      
 <?php
 if(isset($_REQUEST['act']) &&  @$_REQUEST['act']=='1')
 {
 echo '<div class="alert alert-success">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>Success!</strong> Password Change Successfully.
+  <strong>Succès!</strong> Changement de mot de passe réussi.
 </div>';
 
 }
@@ -78,7 +78,7 @@ echo $error;
                     <div class="col-sm-8 col-sm-offset-2">
                <div class="panel panel-success">
                         <div class="panel-heading">
-                          Change Password
+						Changer le mot de passe
                         </div>
 						<form action="setting.php" method="post" id="signupForm1" class="form-horizontal">
                         <div class="panel-body">
@@ -87,7 +87,7 @@ echo $error;
 						
 						
 						<div class="form-group">
-								<label class="col-sm-4 control-label" for="Old">Old Password</label>
+								<label class="col-sm-4 control-label" for="Old">ancien mot de passe</label>
 								<div class="col-sm-5">
 									<input type="password" class="form-control" id="oldpassword" name="oldpassword"  />
 								</div>
@@ -95,7 +95,7 @@ echo $error;
 							
 							
 							<div class="form-group">
-								<label class="col-sm-4 control-label" for="Password"> New Password</label>
+								<label class="col-sm-4 control-label" for="Password"> nouveau mot de passe</label>
 								<div class="col-sm-5">
 									 <input class="form-control" name="newpassword" id="newpassword" type="password">
 								</div>
@@ -103,7 +103,7 @@ echo $error;
 							
 							
 							<div class="form-group">
-								<label class="col-sm-4 control-label" for="Confirm">Confirm Password</label>
+								<label class="col-sm-4 control-label" for="Confirm">Confirmez le mot de passe</label>
 								<div class="col-sm-5">
 									   <input class="form-control" name="confirmpassword" type="password">
 								</div>
@@ -111,7 +111,7 @@ echo $error;
 						
 						<div class="form-group">
 								<div class="col-sm-9 col-sm-offset-4">
-									<button type="submit" name="save" class="btn btn-success" style="border-radius:0%">Make Changes </button>
+									<button type="submit" name="save" class="btn btn-success" style="border-radius:0%">Apporter des changements </button>
 								</div>
 							</div>
                          
@@ -166,16 +166,16 @@ echo $error;
 					}
 				},
 				messages: {
-					oldpassword: "Please enter your old password",
+					oldpassword: "Veuillez entrer votre ancien mot de passe",
 					
 					newpassword: {
-						required: "Please provide a password",
-						minlength: "Your password must be at least 6 characters long"
+						required: "Veuillez fournir un mot de passe",
+						minlength: "Votre mot de passe doit comporter au moins 6 caractères"
 					},
 					confirmpassword: {
-						required: "Please provide a password",
-						minlength: "Your password must be at least 6 characters long",
-						equalTo: "Please enter the same password as above"
+						required: "Veuillez fournir un mot de passe",
+						minlength: "Votre mot de passe doit comporter au moins 6 caractères",
+						equalTo: "Entrez le même mot de passe que ci-dessus"
 					}
 				},
 				errorElement: "em",

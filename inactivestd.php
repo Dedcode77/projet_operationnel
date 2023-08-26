@@ -36,14 +36,14 @@ if(isset($_GET['action']) && $_GET['action']=="approve"){
 
 if(isset($_REQUEST['act']) && @$_REQUEST['act']=="1")
 {
-$errormsg = "<div class='alert alert-success'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Student record has been added!</div>";
+$errormsg = "<div class='alert alert-success'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Le dossier étudiant a été ajouté!</div>";
 }else if(isset($_REQUEST['act']) && @$_REQUEST['act']=="2")
 {
-$errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Student record has been updated!</div>";
+$errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Le dossier étudiant a été mis à jour!</div>";
 }
 else if(isset($_REQUEST['act']) && @$_REQUEST['act']=="3")
 {
-$errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Student has been deleted!</div>";
+$errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>L'élève a été supprimé!</div>";
 }
 
 ?>
@@ -53,7 +53,7 @@ $errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dis
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Fees Management System</title>
+    <title>Système de gestion des frais de scolarité</title>
 
     <!-- BOOTSTRAP STYLES-->
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -82,7 +82,7 @@ include("php/header.php");
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">In-Active Students</h1>
+                        <h1 class="page-head-line">Étudiants inactifs</h1>
                      
                     <?php
 
@@ -110,7 +110,7 @@ include("php/header.php");
  
 		<div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Student  
+                        Gérer l'étudiant 
                         </div>
                         <div class="panel-body">
                             <div class="table-sorting table-responsive">
@@ -118,11 +118,11 @@ include("php/header.php");
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name | Contact</th>
-                                            <th>Grade</th>
-                                            <th>Joined On</th>
-                                            <th>Fees</th>
-											<th>Balance</th>
+                                            <th>Nom | Contact</th>
+                                            <th>Filière</th>
+                                            <th>Inscrit le</th>
+                                            <th>Frais</th>
+											<th>solde</th>
 											<th>Actions</th>
                                         </tr>
                                     </thead>
@@ -145,7 +145,7 @@ include("php/header.php");
 											
 											<a href="inactivestd.php?action=approve&id='.$r['id'].'" class="btn btn-success btn-xs" style="border-radius:60px;"><span class="glyphicon glyphicon-ok"></span></a>
 											
-											<a onclick="return confirm(\'Are you sure you want to delete this record permanently?\');" href="inactivestd.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-xs" style="border-radius:60px;"><span class="glyphicon glyphicon-trash"></span></a> </td>
+											<a onclick="return confirm(\'Etes-vous sûr de vouloir supprimer définitivement cet enregistrement ?\');" href="inactivestd.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-xs" style="border-radius:60px;"><span class="glyphicon glyphicon-trash"></span></a> </td>
 											
                                         </tr>';
 										$i++;

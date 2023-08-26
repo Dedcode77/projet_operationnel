@@ -15,5 +15,5 @@ if(!$conn){
         $amountsum = mysqli_query($conn, $sql) or die(mysqli_error($sql));
         $row_amountsum = mysqli_fetch_assoc($amountsum);
         $totalRows_amountsum = mysqli_num_rows($amountsum);
-        echo 'Rs.' .$row_amountsum['SUM( paid)'];
+        echo 'Fcfa' .$row_amountsum['SUM( paid)'];
 ?>
