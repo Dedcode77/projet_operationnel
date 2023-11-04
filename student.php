@@ -135,7 +135,7 @@ include("php/header.php");
                         <h1 class="page-head-line">Gérer les étudiants
 						<?php
 						echo (isset($_GET['action']) && @$_GET['action']=="add" || @$_GET['action']=="edit")?
-						' <a href="student.php" class="btn btn-success btn-sm pull-right" style="border-radius:0%">Retourner</a>':'<a href="student.php?action=add" class="btn btn-danger btn-sm pull-right" style="border-radius:0%"><i class="glyphicon glyphicon-plus"></i> Ajouter un nouvel étudiant</a>';
+						' <a href="student.php" class="btn btn-success btn-sm pull-right" style="border-radius:0%">Retourner</a>':'<a href="student.php?action=add" class="btn btn-primary btn-sm pull-right" style="border-radius:0%"><i class="glyphicon glyphicon-plus"></i> Ajouter un nouvel étudiant</a>';
 						?>
 						</h1>
                      
@@ -159,7 +159,7 @@ echo $errormsg;
                     <div class="col-sm-10 col-sm-offset-1">
                <div class="panel panel-success">
                         <div class="panel-heading">
-                           <?php echo ($action=="add")? "Add Student Details": "Modifier les détails de l'étudiant"; ?>
+                           <?php echo ($action=="add")? "Ajouter les détails de l'étudiant": "Modifier les détails de l'étudiant"; ?>
                         </div>
 						<form action="student.php" method="post" id="signupForm1" class="form-horizontal">
                         <div class="panel-body">

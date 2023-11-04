@@ -43,6 +43,8 @@
 
     <!-- BOOTSTRAP STYLES-->
     <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- BOOTSTRAP STYLES-->
+    <link href="css/styles.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="css/font-awesome.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
@@ -58,7 +60,7 @@ html * {
 }
 .myhead{
 margin-top:0px;
-margin-bottom:0px;
+margin-bottom:20px;
 text-align:center;
 }
 </style>
@@ -71,7 +73,7 @@ text-align:center;
                
                 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                           
-                            <div class="panel-body" style="background-color: #E2E2E2; margin-top:70px; box-shadow: 5px 10px #888888;">
+                            <div class="panel-body" >
 							  <h3 class="myhead">Système de gestion des frais de scolarité</h3>
                                 <form role="form" action="login.php" method="post">
                                     <hr />
@@ -95,10 +97,10 @@ text-align:center;
 										
                                    
                                      
-                                        <button class="btn btn-success" style="border-radius:0%" >
+                                        <button class="btn btn-primary" style="border-radius:0%" >
                                     <a style="color:white;text-decoration: none;" href="register.php">Inscription</a>
                                     </button>
-                                     <button class="btn btn-success" style="border-radius:0%" type= "submit" name="login">Se connecter</button>
+                                     <button class="btn btn-primary" style="border-radius:0%" type= "submit" name="login">Se connecter</button>
                                    
                                     </form>
                             </div>

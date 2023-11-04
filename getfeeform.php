@@ -172,19 +172,19 @@ $sq = $conn->query($sql);
 $sr = $sq->fetch_assoc();
 
 echo '
-<h4>Student Info</h4>
+<h4>Info étudiant</h4>
 <div class="table-responsive">
 <table class="table table-bordered">
 <tr>
-<th>Full Name</th>
+<th>Nom complet</th>
 <td>'.$sr['sname'].'</td>
-<th>Grade</th>
+<th>Filière</th>
 <td>'.$sr['grade'].'</td>
 </tr>
 <tr>
 <th>Contact</th>
 <td>'.$sr['contact'].'</td>
-<th>Joined On</th>
+<th>Date adhésion</th>
 <td>'.date("d-m-Y", strtotime($sr['joindate'])).'</td>
 </tr>
 
@@ -195,14 +195,14 @@ echo '
 
 
 echo '
-<h4>Fee Info</h4>
+<h4>Info sur les frais</h4>
 <div class="table-responsive">
 <table class="table table-bordered">
     <thead>
       <tr>
         <th>Date</th>
-        <th>Paid</th>
-        <th>Remarks</th>
+        <th>Payé</th>
+        <th>Remarque</th>
       </tr>
     </thead>
     <tbody>';
@@ -224,23 +224,23 @@ echo '
  
 <table style="width:150px;" >
 <tr>
-<th>Total Fees: 
+<th>Frais Total: 
 </th>
-<td>'.'Rs. '.$sr['fees'].'
+<td>'.'Fcfa. '.$sr['fees'].'
 </td>
 </tr>
 
 <tr>
-<th>Total Paid: 
+<th>Total payé: 
 </th>
-<td>'.'Rs. '.$totapaid.'
+<td>'.'Fcfa. '.$totapaid.'
 </td>
 </tr>
 
 <tr>
-<th>Balance: 
+<th>Solde: 
 </th>
-<td>'.'Rs. '.$sr['balance'].'
+<td>'.'Fcfa. '.$sr['balance'].'
 </td>
 </tr>
 </table>
@@ -250,7 +250,7 @@ echo '
  }
 else
 {
-echo 'No fees submit.';
+echo 'Pas de frais d\'inscription.';
 }
  
 }

@@ -111,7 +111,7 @@ include("php/header.php");
                         <h1 class="page-head-line">Filière  
 						<?php
 						echo (isset($_GET['action']) && @$_GET['action']=="add" || @$_GET['action']=="edit")?
-						' <a href="grade.php" class="btn btn-success btn-sm pull-right" style="border-radius:0%">Retourner </a>':'<a href="grade.php?action=add" class="btn btn-danger btn-sm pull-right" style="border-radius:0%"><i class="glyphicon glyphicon-plus"></i> Ajouter une nouvelle filière</a>';
+						' <a href="grade.php" class="btn btn-success btn-sm pull-right" style="border-radius:0%">Retourner </a>':'<a href="grade.php?action=add" class="btn btn-primary btn-sm pull-right" style="border-radius:0%"><i class="glyphicon glyphicon-plus"></i> Ajouter une nouvelle filière</a>';
 						?>
 						</h1>
                      

@@ -2,20 +2,20 @@
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+            <div class="navbar-header ">
+                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Basculer vers la navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Gestion des frais</a>
+                <a class="navbar-brand " href="index.php">SchoolPay</a>
             </div>
 
         </nav>
         <!-- /. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
+        <nav class="navbar-default navbar-side " role="navigation">
+            <div class="sidebar-collapse ">
                 <ul class="nav" id="main-menu">
                     <li>
                         <div class="user-img-div text-center">
@@ -35,7 +35,7 @@
                     </li>
 
                     <li>
-                        <a class="<?php if($page=='inact'){ echo 'active-menu';}?>" href="inactivestd.php"><i class="fa fa-toggle-off "></i>Étudiants en activité</a>
+                        <a class="<?php if($page=='inact'){ echo 'active-menu';}?>" href="inactivestd.php"><i class="fa fa-toggle-off "></i>Étudiants inactifs</a>
                     </li>
 
                     <li>

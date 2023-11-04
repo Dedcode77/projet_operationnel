@@ -21,25 +21,25 @@ html * {
   text-decoration: none;
 }
 .mb-dull {
-  background-color: #8f8f2c;
+  background-color: #c5baaa;
 }
 .mb-red {
-  background-color: #d36f2e;
+  background-color: #a98e7b;
 }
 .mb-pink {
   background-color: #ff2f71;
 }
 
 .mb-yell {
-  background-color: #ca8012;
+  background-color: #3b7b9a;
 }
 
 .mb-green {
-  background-color: #168e18;
+  background-color: #ee7828;
 }
 
 .mb-purple {
-  background-color: #6a40d0;
+  background-color: #6c63ff;
 }
 
 .mb-maroon {

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
      <!-- BOOTSTRAP STYLES-->
      <link href="css/bootstrap.css" rel="stylesheet" />
+     <!-- BOOTSTRAP STYLES-->
+     <link href="css/styles.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="css/font-awesome.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
@@ -18,12 +20,13 @@ html * {
 }
 .myhead{
 margin-top:0px;
-margin-bottom:0px;
+margin-bottom:20px;
 text-align:center;
 }
+
 </style>
 </head>
-<body>
+<body >
 <?php
  include("php/dbconnect.php");
 if (isset($_REQUEST['username'], $_REQUEST['emailid'], $_REQUEST['password'])){
@@ -54,7 +57,7 @@ if (isset($_REQUEST['username'], $_REQUEST['emailid'], $_REQUEST['password'])){
               
                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                          
-                           <div class="panel-body" style="background-color: #E2E2E2; margin-top:70px; box-shadow: 5px 10px #888888;">
+                           <div class="panel-body" >
                              <h3 class="myhead">Système de gestion des frais de scolarité</h3>
                              <form class="box" action="" method="post">
                                
@@ -76,7 +79,7 @@ if (isset($_REQUEST['username'], $_REQUEST['emailid'], $_REQUEST['password'])){
                             
                                 <input type="password" class="form-control" name="password" placeholder="Donnez le mot de passe de l'utilisateur" required />
                             </div>
-                            <input type="submit" name="submit" value="S'inscrire" class="btn btn-success" />
+                            <input type="submit" name="submit" value="S'inscrire" class="btn btn-primary" />
                                 
                             <p class="box-register">Déjà inscrit? <a href="login.php">Connectez-vous ici</a></p>
                             </form>
